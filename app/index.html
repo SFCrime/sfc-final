@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="bower_components/fullpage.js/jquery.fullPage.css">
     <link rel="stylesheet" href="bower_components/radar-chart-d3/src/radar-chart.css">
     <link rel="stylesheet" href="bower_components/leaflet-draw/dist/leaflet.draw.css">
     <!-- endbuild -->
@@ -117,14 +118,15 @@
 <body>
     <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+            <![endif]-->
+
+
     <div id='fullpage' class="container-fluid">
+        <div id='firstPage' class="row section">
+            <h1>INTRO</h1>
+        </div>
 
-      <div class="row section">
-
-        <h1>INTRO</h1>
-      </div>
-        <div class="row section">
+        <div id='secondPage' class="row section">
             <div id="radar-chart-wrapper" class="col-md-6">
                 <div id="radar-chart" class='radar-chart'></div>
             </div>
@@ -133,7 +135,8 @@
             </div>
         </div>
 
-        <div class="row section">
+        <div id='thirdPage' class="row section">
+          <div class="col-md-6">
             <h1>Number of Crimes By 2014 World Series Game</h1>
             <div id="lead">
                 <p>Insert narrative</p>
@@ -145,14 +148,31 @@
                 </div>
                 <div id="vis"></div>
             </div>
+          </div>
         </div>
 
-
-        <div class="row section">
-            <div id="groupedBar"></div>
+        <div id='fourthPage' class="row section">
+           <div class="col-md-6">
+             <div id="groupedBar"></div>
+           </div>
         </div>
     </div>
-    </div>
+
+
+    <!-- <div id="fp-nav" class="right" style="margin-top: -33.5px;"> -->
+    <!--     <ul> -->
+    <!--         <li><a href="#firstPage" class=""><span></span></a> -->
+    <!--             <div class="fp-tooltip right">First</div> -->
+    <!--         </li> -->
+    <!--         <li><a href="#secondPage" class=""><span></span></a> -->
+    <!--             <div class="fp-tooltip right">Second</div> -->
+    <!--         </li> -->
+    <!--         <li><a href="#thirdPage"><span></span></a> -->
+    <!--             <div class="fp-tooltip right">Third</div> -->
+    <!--         </li> -->
+    <!--     </ul> -->
+    <!-- </div> -->
+
 
 
     <!-- build:js scripts/vendor.js -->
@@ -172,6 +192,8 @@
     <!-- build:js({.tmp,app}) scripts/main.js -->
     <script src="scripts/radar-chart.js"></script>
     <script type="text/javascript" src="scripts/small_multiples.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
     <!-- endbuild -->
 </body>
 

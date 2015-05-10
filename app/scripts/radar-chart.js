@@ -1,7 +1,5 @@
 $(document)
     .ready(function() {
-        $('#fullpage').fullpage();
-
         var w = 800,
             h = 800;
         d3.xhr("data/radar.csv", function(csv) {
