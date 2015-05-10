@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>SFCViewer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="bower_components/radar-chart-d3/src/radar-chart.css">
+    <link rel="stylesheet" href="bower_components/leaflet-draw/dist/leaflet.draw.css">
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <style>
+        .radar-chart .area {
+            fill-opacity: 0.1;
+        }
+        .radar-chart .area.focused {
+            fill-opacity: 0.8;
+        }
+        .tooltip {
+            display: none;
+        }
+        #lead {
+            clear: both;
+            width: 600px;
+        }
+        #lead p {
+            color: #444;
+            font-family: Georgia, Palatino, serif;
+            font-size: 1.0em;
+            line-height: 1.4em;
+        }
+        .chart {
+            float: left;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            padding-top: 0;
+            padding-left: 0;
+        }
+        svg {
+            font-size: 10px;
+        }
+        .background {
+            fill: none;
+        }
+        .area {
+            fill: #cec6b9;
+        }
+        .line {
+            fill: none;
+            stroke: #74736c;
+            stroke-width: 1.4px;
+        }
+        .title {
+            font-size: 12px;
+        }
+        .axis line,
+        .grid line {
+            stroke-width: .5px;
+            shape-rendering: crispEdges;
+            stroke: #fff;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .axis path {
+            display: none;
+        }
+        .hidden {
+            display: none;
+            opacity: 0.0;
+        }
+        #button-wrap {
+            width: 220px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40px;
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+        .button {
+            cursor: pointer;
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            background: #fcfcfc;
+            border: 1px solid #cecece;
+            display: block;
+            padding-top: 5px;
+            margin-top: 10px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        .button.active {
+            box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.18);
+            pointer-events: none;
+            background-color: #e6e6e6;
+        }
+        #count {
+            border-radius: 5px 0px 0px 5px;
+        }
+        #name {
+            border-radius: 0px 5px 5px 0px;
+        }
+    </style>
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id='fullpage' class="container-fluid">
+        <div class="row section">
+            <div id="radar-chart-wrapper" class="col-md-6">
+                <div id="radar-chart" class='radar-chart'></div>
+            </div>
+            <div class='col-md-6'>
+                <div id='legend'></div>
+            </div>
+        </div>
+
+        <div class="row section">
+            <h1>Number of Crimes By 2014 World Series Game</h1>
+            <div id="lead">
+                <p>Insert narrative</p>
+            </div>
+            <div id="main">
+                <div id="button-wrap">
+                    <div id="count" class="button active">COUNT</div>
+                    <div id="game" class="button">GAME</div>
+                </div>
+                <div id="vis"></div>
+            </div>
+        </div>
+
+
+        <div class="row section">
+            <div id="groupedBar"></div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/dimple/dist/dimple.v2.1.2.min.js"></script>
+    <script src="bower_components/fullpage.js/jquery.fullPage.js"></script>
+    <script src="bower_components/radar-chart-d3/src/radar-chart.js"></script>
+    <script src="scripts/isotope.pkgd.min.js"></script>
+    <script src="scripts/queue.js"></script>
+    <script src="scripts/grouped_bar.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/main.js -->
+    <script src="scripts/radar-chart.js"></script>
+    <script type="text/javascript" src="scripts/small_multiples.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
