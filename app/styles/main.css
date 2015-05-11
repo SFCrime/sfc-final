@@ -1,19 +1,15 @@
- /* #fullpage { */
- /*     margin-left: 0px; */
- /*     margin-right: 0px; */
- /*     padding-right: 0px; */
- /*     padding-left: 0px; */
-/* } */
 
  #firstPage {
-     background-image: url(/images/bg.jpg);
-     background-repeat: no-repeat;
-     color:white;
-     background-size:cover;
+     /* background-image: url(/images/bg.jpg); */
+     /* background-repeat: no-repeat; */
+     /* background-size:cover; */
 }
 .row {
     color:black;
 }
+
+
+/* RADAR CHART                     */
  .radar-chart .area {
      fill-opacity: 0.1;
  }
@@ -23,6 +19,14 @@
  .tooltip {
      display: none;
  }
+
+
+ /* OVERVIEW MAP */
+
+ #overviewmap {
+     height:700px;
+ }
+ 
  #lead {
      clear: both;
      width: 600px;

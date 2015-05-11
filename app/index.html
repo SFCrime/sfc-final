@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <style>
-           </style>
+    </style>
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -37,15 +37,35 @@
             <h3>Visualizing the effect Giant's World Series Win on crime in 2014</h3>
         </div>
 
-        <div id='secondPage' class="row section">
-            <div id="radar-chart-wrapper" class="col-md-5">
-                <div id="radar-chart" class='radar-chart'></div>
-            </div>
-            <div class='col-md-2'>
-                <div id='legend'></div>
+        <div id='firstPage2' class='row section'>
+            <div class='col-md-7'>
+                <div id='overviewmap'></div>
             </div>
             <div class='col-md-5'>
-              <h1>Visualizing Crime Types</h1>
+                <h1>Choosing the Location</h1>
+                <p>Our data set included crime for all of San Francisco so choosing an area to focus on was essential. Luckily there were numerous reports about crime in the city that seemed to focus on the Mission District and downtown as hotspots for crime during the World Series win.</p>
+                <blockquote>
+                    <p>All over the city bonfires were being lit.. One was downtown on Market street. Another was on 19th and Mission. Another on 23rd and Mission. Still another was near the police station on 16th and Valencia which was the scene of raucous Occupy protest a few weeks ago.</p>
+                    <p>Eventually a bus was lit on fire around 3rd and Market in the heart of downtown.</p>
+                    <footer><a href='http://hiphopandpolitics.com/2012/10/29/when-do-we-call-a-celebration-a-riot-the-sf-giants-win-the-world-series/'><cite title="Hip Hop and Politics">Hip Hop and Politics</cite></a>
+                    </footer>
+                </blockquote>
+                <blockquote>
+                    <p>One person was shot in the arm near 21st and Valencia streets, and second person walked into San Francisco General Hospital with a gunshot wound that he said occurred near 16th and Bryant streets.</p>
+                    <p>An argument led to a stabbing near 21st and Valencia Streets, police said, with the victim suffering three wounds and being hospitalized in serious condition</p>
+                    <footer><a href='http://www.sfgate.com/crime/article/S-F-picks-up-the-pieces-after-raucous-Giants-5858132.php'><cite title="SFGate">SFGate</cite></a>
+                    </footer>
+                </blockquote>
+                <p>We have denoted on the map the varions points of significance including the ballpark and the locations of the fires as well as the area from which we pulled crimes.</p>
+            </div>
+        </div>
+        <div id='secondPage' class="row section">
+            <div id="radar-chart-wrapper" class="col-md-7">
+                <div id="radar-chart" class='radar-chart pull-left'></div>
+                <div id='legend' class='pull-left'></div>
+            </div>
+            <div class='col-md-5'>
+                <h1>Visualizing Crime Types</h1>
                 <div>Our first explorating focused on what kinds of crimes seemed to occur during each game. There was a flurry of news reports about rioting in San Francisco. In our exploration, we isolated a specific area to focus on as a what seemed to be the core location for rioting and problems within the city. </div>
             </div>
         </div>
@@ -90,6 +110,7 @@
     <script src="scripts/isotope.pkgd.min.js"></script>
     <script src="scripts/queue.js"></script>
     <script src="scripts/grouped_bar.js"></script>
+    <script src="scripts/overview-map.js"></script>
 
     <!-- endbuild -->
 

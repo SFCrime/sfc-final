@@ -18,14 +18,14 @@ $(document)
                     .data([1])
                     .enter()
                     .append('svg')
-                    .attr("width", 300)
+                    .attr("width", 200)
                     .attr("height", 150);
 
                 //Initiate Legend
                 var legend = svg.append("g")
                     .attr("class", "legend")
                     .attr("height", 150)
-                    .attr("width", 300)
+                    .attr("width", 200)
                     .attr('transform', 'translate(10,20)');
                 //Create colour squares
                 legend.selectAll('rect')
