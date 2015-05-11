@@ -23,9 +23,7 @@ $(document)
                         "away"
                     ];
                     var temp = d.className.split("a")[1].split("-");
-                    console.log(temp);
                     var myDate = new Date(temp[0],temp[1]-1,temp[2]);
-                    console.log(myDate);
                     return {
                         text: "World Series Game " + (i + 1) + ": " + weekday[myDate.getDay()] + ", Oct. " + myDate.getDate() + ", " + game_local[i],
                         classed: d.className

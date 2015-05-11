@@ -117,3 +117,12 @@
  #name {
      border-radius: 0px 5px 5px 0px;
  }
+
+ #dc-mapped #dcjs-map {
+     height:400px;
+ }
+ #dc-mapped .dc-chart g.row text {
+     fill:black;
+ }
+
+ 
