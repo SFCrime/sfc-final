@@ -74,8 +74,8 @@
                     <p>All games occurred in Kansas City Missouri (labelled away) or in San Francisco (labelled home).</p>
                     <blockquote>
                         <p>Eventually a bus was lit on fire around 3rd and Market in the heart of downtown.</p>
-                    <footer><i>Occurring on the night of Game 7, </i><a href='http://hiphopandpolitics.com/2012/10/29/when-do-we-call-a-celebration-a-riot-the-sf-giants-win-the-world-series/'><cite title="Hip Hop and Politics">Hip Hop and Politics</cite></a>
-                    </footer>
+                        <footer><i>Occurring on the night of Game 7, </i><a href='http://hiphopandpolitics.com/2012/10/29/when-do-we-call-a-celebration-a-riot-the-sf-giants-win-the-world-series/'><cite title="Hip Hop and Politics">Hip Hop and Politics</cite></a>
+                        </footer>
                     </blockquote>
                 </div>
             </div>
@@ -161,9 +161,41 @@
         </div>
 
         <div id='fifthPage' class="row section">
-            <div class="col-md-6">
-                <div id="mapped">Our last visualization that will allow for exploration</div>
+          <div class='col-md-6 pull-left'>
+                <div id="crimesbyhour">
+                    <strong>Crimes by hour</strong>
+                    <div class="clearfix"></div>
+                </div>
             </div>
+
+
+            <div class="col-md-6 pull-right">
+
+                <div id="category">
+                    <strong>Crimes by category</strong>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="game">
+                    <strong>Crimes by game</strong>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="win">
+                    <strong>Crimes by win-lose</strong>
+                    <div class="clearfix"></div>
+                </div>
+                <div id="home">
+                    <strong>Crimes by home-away</strong>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div id='dc-mapped' class="col-md-6 pull-left">
+                <!-- <div id='dc-data-count'> -->
+                <!--     <p><strong class='filter-count'></strong> selected out of <strong class='total-count'></strong> records</p> -->
+                <!-- </div> -->
+                <div id="dcjs-map">
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -177,16 +209,18 @@
     <script src="bower_components/radar-chart-d3/src/radar-chart.js"></script>
     <script src="scripts/isotope.pkgd.min.js"></script>
     <script src="scripts/queue.js"></script>
-    <script src="scripts/grouped_bar.js"></script>
-    <script src="scripts/overview-map.js"></script>
-
+    <script src="bower_components/crossfilter/crossfilter.min.js"></script>
+    <script src="bower_components/dcjs/web/js/dc.js"></script>
+    <script src="scripts/vendor/dc.leaflet.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/main.js -->
     <script src="scripts/radar-chart.js"></script>
     <script type="text/javascript" src="scripts/small_multiples.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
-
+    <script src="scripts/grouped_bar.js"></script>
+    <script src="scripts/overview-map.js"></script>
+    <script src="scripts/map_slider.js"></script>
     <!-- endbuild -->
 </body>
 
