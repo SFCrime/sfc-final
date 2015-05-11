@@ -36,7 +36,7 @@ function drawMarkerArea(csvfile) {
         .xAxis().ticks(2).tickFormat(d3.format("s"));
 
 
-    var gameChart = dc.rowChart("#game", groupname);
+    var gameChart = dc.rowChart("#gamegraph", groupname);
     var game = data.dimension(function(d) {
         return d.game;
     });
@@ -50,6 +50,9 @@ function drawMarkerArea(csvfile) {
         .colors(["#2b8cbe"])
         .xAxis().ticks(2).tickFormat(d3.format("s"));
 
+
+
+    
 
     var hourChart = dc.barChart("#crimesbyhour", groupname);
     var crimesbyhour = data.dimension(function(d) {
@@ -66,32 +69,45 @@ function drawMarkerArea(csvfile) {
         .yAxis().ticks(2).tickFormat(d3.format("s"));
 
 
-    // var winChart = dc.barChart("#win", groupname);
-    // var win = data.dimension(function(d) {
-    //     return d.win;
-    // });
-    // var winGroup = win.group().reduceCount();
-    // winChart
-    //     .dimension(win)
-    //     .group(winGroup)
-    //     .xUnits(dc.units.ordinal)
-    //     .width(200)
-    //     .elasticY(true)
-    //     .colors(["#2ca25f"])
-    //     .yAxis().ticks(2).tickFormat(d3.format("s"));
-    // var homeChart = dc.barChart("#home", groupname);
-    // var home = data.dimension(function(d) {
-    //     return d.home;
-    // });
-    // var homeGroup = home.group().reduceCount();
-    // homeChart
-    //     .dimension(home)
-    //     .group(homeGroup)
-    //     .xUnits(dc.units.ordinal)
-    //     .width(200)
-    //     .elasticY(true)
-    //     .colors(["#2ca25f"])
-    //     .yAxis().ticks(2).tickFormat(d3.format("s"));
+
+
+    
+    var winChart = dc.barChart("#mywingraph", groupname);
+    var win = data.dimension(function(d) {
+        return d.win;
+    });
+    var winGroup = win.group().reduceCount();
+    winChart
+        .dimension(win)
+        .group(winGroup)
+        .xUnits(dc.units.ordinal)
+        .width(200)
+        .elasticY(true)
+        .colors(["#2ca25f"])
+        .x(d3.scale.linear().domain([0,7]))
+        .yAxis().ticks(2).tickFormat(d3.format("s"));
+
+
+
+
+
+    
+    var homeChart = dc.barChart("#myhomegraph", groupname);
+    var home = data.dimension(function(d) {
+        return d.home;
+    });
+    var homeGroup = home.group().reduceCount();
+
+    console.log(homeGroup.all());
+    homeChart
+        .dimension(home)
+        .group(homeGroup)
+        .width(200)
+        .transitionDuration(500)
+        .elasticY(true)
+        .colors(["#2ca25f"])
+        .x(d3.scale.linear().domain([0, 1]))
+        .yAxis().ticks(2).tickFormat(d3.format("s"));
 
     dc.renderAll(groupname);
 }
