@@ -1,7 +1,7 @@
 $(document)
     .ready(function() {
-        var w = 800,
-            h = 800;
+        var w = 600,
+            h = 600;
         d3.xhr("data/radar.csv", function(csv) {
             function showLegend(data) {
                 var LegendOptions = cols = data.map(function(d, i) {
@@ -19,12 +19,12 @@ $(document)
                     .enter()
                     .append('svg')
                     .attr("width", 300)
-                    .attr("height", 300);
+                    .attr("height", 150);
 
                 //Initiate Legend
                 var legend = svg.append("g")
                     .attr("class", "legend")
-                    .attr("height", 300)
+                    .attr("height", 150)
                     .attr("width", 300)
                     .attr('transform', 'translate(10,20)');
                 //Create colour squares
@@ -113,7 +113,7 @@ $(document)
                 data = data.slice(0, 7);
                 RadarChart.defaultConfig.w = w;
                 RadarChart.defaultConfig.h = h;
-                RadarChart.defaultConfig.levels = 10;
+                RadarChart.defaultConfig.levels = 6;
                 RadarChart.defaultConfig.circles = false;
                 RadarChart.draw("#radar-chart", data);
                 showLegend(data);
