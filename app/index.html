@@ -43,7 +43,8 @@
             </div>
             <div class='col-md-5'>
                 <h1>Choosing the Location</h1>
-                <p>Our data set included crime for all of San Francisco so choosing an area to focus on was essential. Luckily there were numerous reports about crime in the city that seemed to focus on the Mission District and downtown as hotspots for crime during the World Series win.</p>
+                <p>Our data set included crime for all of San Francisco so choosing an area to focus on was essential. Luckily there were numerous reports about crime in the city that seemed to focus on the Mission District and downtown as hotspots for crime during the World Series win. We sampled the entire day of crime in that belief that crimes before the game would be relatively similar to the other game days.</p>
+                <p>All games occurred in Kansas City Missouri (labelled away) or in San Francisco (labelled home).</p>
                 <blockquote>
                     <p>All over the city bonfires were being lit.. One was downtown on Market street. Another was on 19th and Mission. Another on 23rd and Mission. Still another was near the police station on 16th and Valencia which was the scene of raucous Occupy protest a few weeks ago.</p>
                     <p>Eventually a bus was lit on fire around 3rd and Market in the heart of downtown.</p>
@@ -52,7 +53,6 @@
                 </blockquote>
                 <blockquote>
                     <p>One person was shot in the arm near 21st and Valencia streets, and second person walked into San Francisco General Hospital with a gunshot wound that he said occurred near 16th and Bryant streets.</p>
-                    <p>An argument led to a stabbing near 21st and Valencia Streets, police said, with the victim suffering three wounds and being hospitalized in serious condition.</p>
                     <footer><a href='http://www.sfgate.com/crime/article/S-F-picks-up-the-pieces-after-raucous-Giants-5858132.php'><cite title="SFGate">SFGate</cite></a>
                     </footer>
                 </blockquote>
@@ -67,7 +67,15 @@
             </div>
             <div class='col-md-5'>
                 <h1>Visualizing Crime Types</h1>
-                <div>Our first explorating focused on what kinds of crimes seemed to occur during each game. There was a flurry of news reports about rioting in San Francisco. In our exploration, we isolated a specific area to focus on as a what seemed to be the core location for rioting and problems within the city. </div>
+                <div><p>Our first explorating focused on what kinds of crimes seemed to occur during each game. There was a flurry of news reports about rioting in San Francisco and we wanted to better understand what kind of crime was associated with each game.</p>
+                  <p>The variety of crime types made it difficult to compare them together as arson occurred relatively rarely as opposed to something like burglary. Therefore we log normalized the data, taking the log of the total number of instances in order to bring them to the same scale. Highlight either a name or shape in order to make bold it in comparison to the other graphs.</p>
+                  <p>One of the immediate comparisons we can draw is that of Game 7, which clearly had high instances of nearly all selected crime types except for drug and narcotic offenses. It may be that police had to focus on larger public safety issues than pursue minor drug offenses.</p>
+                  <blockquote>
+                    <p>An argument led to a stabbing near 21st and Valencia Streets, police said, with the victim suffering three wounds and being hospitalized in serious condition.</p>
+                    <footer><a href='http://www.sfgate.com/crime/article/S-F-picks-up-the-pieces-after-raucous-Giants-5858132.php'><cite title="SFGate">SFGate</cite></a>
+                    </footer>
+                </blockquote>
+                </div>
             </div>
         </div>
 

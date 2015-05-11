@@ -5,9 +5,26 @@ $(document)
         d3.xhr("data/radar.csv", function(csv) {
             function showLegend(data) {
                 var LegendOptions = cols = data.map(function(d, i) {
+                    var weekday = new Array(7);
+                    weekday[0]=  "Sunday";
+                    weekday[1] = "Monday";
+                    weekday[2] = "Tuesday";
+                    weekday[3] = "Wednesday";
+                    weekday[4] = "Thursday";
+                    weekday[5] = "Friday";
+                    weekday[6] = "Saturday";
+                    var game_local = [
+                        "away",
+                        "away",
+                        "home",
+                        "home",
+                        "home",
+                        "away",
+                        "away"
+                    ];
                     return {
-                        text: "World Series Game " + (i + 1),
-                        classed: d.className//.split("-").join("")
+                        text: "World Series Game " + (i + 1) + ": " + weekday[new Date(d.className.split("a")[1]).getDay()] + ", Oct. " + new Date(d.className.split("a")[1]).getDate() + ", " + game_local[i],
+                        classed: d.className
                     }
                 });
 
@@ -18,14 +35,14 @@ $(document)
                     .data([1])
                     .enter()
                     .append('svg')
-                    .attr("width", 200)
-                    .attr("height", 150);
+                    .attr("width", 280)
+                    .attr("height", 160);
 
                 //Initiate Legend
                 var legend = svg.append("g")
                     .attr("class", "legend")
-                    .attr("height", 150)
-                    .attr("width", 200)
+                    .attr("height", 160)
+                    .attr("width", 280)
                     .attr('transform', 'translate(10,20)');
                 //Create colour squares
                 legend.selectAll('rect')
@@ -50,7 +67,7 @@ $(document)
                     .data(LegendOptions)
                     .enter()
                     .append("text")
-                    .attr("x", 40)
+                    .attr("x", 35)
                     .attr("y", function(d, i) {
                         return i * 20 + 9;
                     })
@@ -115,7 +132,10 @@ $(document)
                 RadarChart.defaultConfig.h = h;
                 RadarChart.defaultConfig.levels = 6;
                 RadarChart.defaultConfig.circles = false;
+                RadarChart.defaultConfig.axisText = true;
                 RadarChart.draw("#radar-chart", data);
+
+                //d3.select("#radar-chart").selectAll(".level-group").selectAll("text");
                 showLegend(data);
             }
             showRadar();
