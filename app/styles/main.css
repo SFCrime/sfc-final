@@ -4,7 +4,7 @@
      /* background-repeat: no-repeat; */
      /* background-size:cover; */
 }
-.row {
+div.row {
     color:black;
 }
 
@@ -124,5 +124,8 @@
  #dc-mapped .dc-chart g.row text {
      fill:black;
  }
-
+ rect.extent{
+     fill:blue;
+     opacity:0.4;
+ }
  

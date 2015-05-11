@@ -17,8 +17,8 @@ function drawMarkerArea(csvfile) {
         .group(crimeGroup)
         .width(600)
         .height(600)
-        .zoom(14)
-        .center([37.7595, -122.427]);
+        .zoom(12)
+        .center([37.77, -122.44]);
 
 
     var categoryChart = dc.rowChart("#category", groupname);
@@ -29,8 +29,8 @@ function drawMarkerArea(csvfile) {
     categoryChart
         .dimension(category)
         .group(categoryGroup)
-        .height(600)
-        .width(270)
+        .height(800)
+        .width(390)
         .elasticX(true)
         .colors(["#2ca25f"])
         .xAxis().ticks(2).tickFormat(d3.format("s"));
@@ -44,15 +44,13 @@ function drawMarkerArea(csvfile) {
     gameChart
         .dimension(game)
         .group(gameGroup)
-        .height(300)
-        .width(270)
+        .height(200)
+        .width(390)
         .elasticX(true)
         .colors(["#2b8cbe"])
         .xAxis().ticks(2).tickFormat(d3.format("s"));
 
 
-
-    
 
     var hourChart = dc.barChart("#crimesbyhour", groupname);
     var crimesbyhour = data.dimension(function(d) {
@@ -71,8 +69,7 @@ function drawMarkerArea(csvfile) {
 
 
 
-    
-    var winChart = dc.barChart("#mywingraph", groupname);
+    var winChart = dc.rowChart("#mywingraph", groupname);
     var win = data.dimension(function(d) {
         return d.win;
     });
@@ -80,34 +77,26 @@ function drawMarkerArea(csvfile) {
     winChart
         .dimension(win)
         .group(winGroup)
-        .xUnits(dc.units.ordinal)
-        .width(200)
-        .elasticY(true)
+        .width(390)
+        .elasticX(true)
         .colors(["#2ca25f"])
-        .x(d3.scale.linear().domain([0,7]))
-        .yAxis().ticks(2).tickFormat(d3.format("s"));
-
-
-
+        .xAxis().ticks(2).tickFormat(d3.format("s"));
 
 
     
-    var homeChart = dc.barChart("#myhomegraph", groupname);
+    var homeChart = dc.rowChart("#myhomegraph", groupname);
     var home = data.dimension(function(d) {
         return d.home;
     });
     var homeGroup = home.group().reduceCount();
-
-    console.log(homeGroup.all());
     homeChart
         .dimension(home)
         .group(homeGroup)
-        .width(200)
+        .width(390)
         .transitionDuration(500)
-        .elasticY(true)
+        .elasticX(true)
         .colors(["#2ca25f"])
-        .x(d3.scale.linear().domain([0, 1]))
-        .yAxis().ticks(2).tickFormat(d3.format("s"));
+        .xAxis().ticks(2).tickFormat(d3.format("s"));
 
     dc.renderAll(groupname);
 }
