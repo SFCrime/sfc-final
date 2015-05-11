@@ -26,3 +26,12 @@ grunt server
 ```
 
 That will start a livereloading server
+
+
+Docker will build the container automatically then you just need to run:
+
+```
+docker run -d -p 2000:800 anabranch/sfcrime-viewer
+```
+
+The app will be available on port 2000 with that code.
