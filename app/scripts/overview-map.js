@@ -27,7 +27,8 @@ $(document).ready(function() {
     var mission23rd = [37.7538463,-122.4186018];
     var valencia16th = [37.7649217,-122.4219094];
     var market3rd = [37.7876655,-122.4034605];
-    
+    var valencia21st = [37.7568988,-122.4211319];
+    var bryant16th = [37.765618,-122.4105284];
 
     poly = poly.map(function(d){ return [d[1],d[0]];});
 
@@ -40,10 +41,32 @@ $(document).ready(function() {
 
     L.polygon(poly).addTo(map);
 
-    L.marker(attpark).addTo(map); // need to add popup
-    L.marker(mission19th).addTo(map); // need to add popup
-    L.marker(mission23rd).addTo(map); // need to add popup
-    L.marker(valencia16th).addTo(map); // need to add popup
-    L.marker(market3rd).addTo(map); // need to add popup
+    L.marker(attpark)
+        .addTo(map)
+        .bindPopup("This is AT&T Park, the location of the home games.");
+    L.marker(mission19th)
+        .addTo(map)
+        .bindPopup("This is 19th and Mission, the Location of a bonfire.");
+
+    L.marker(mission23rd)
+        .addTo(map)
+        .bindPopup("This is 23rd and Mission, the site of another bonfire.");
+
+    L.marker(valencia16th)
+        .addTo(map)
+        .bindPopup("Site of the Police Station and another bonfire.");
+
+    L.marker(market3rd)
+        .addTo(map)
+        .bindPopup("Site where a bus was set on fire downtown.");
+    
+    L.marker(valencia21st)
+        .addTo(map)
+        .bindPopup("Shooting and Stabbing Near here, 21st and Valencia.");
+    
+    L.marker(bryant16th)
+        .addTo(map)
+        .bindPopup("A victim reported being shot here, 16th and Bryant.");
+    
     
 });
