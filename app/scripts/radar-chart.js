@@ -22,8 +22,12 @@ $(document)
                         "away",
                         "away"
                     ];
+                    var temp = d.className.split("a")[1].split("-");
+                    console.log(temp);
+                    var myDate = new Date(temp[0],temp[1]-1,temp[2]);
+                    console.log(myDate);
                     return {
-                        text: "World Series Game " + (i + 1) + ": " + weekday[new Date(d.className.split("a")[1]).getDay()] + ", Oct. " + new Date(d.className.split("a")[1]).getDate() + ", " + game_local[i],
+                        text: "World Series Game " + (i + 1) + ": " + weekday[myDate.getDay()] + ", Oct. " + myDate.getDate() + ", " + game_local[i],
                         classed: d.className
                     }
                 });
