@@ -44,15 +44,15 @@
             <div class='col-md-5'>
                 <h1>Choosing the Location</h1>
                 <p>Our data set included crime for all of San Francisco so choosing an area to focus on was essential. Luckily there were numerous reports about crime in the city that seemed to focus on the Mission District and downtown as hotspots for crime during the World Series win. We sampled the entire day of crime in that belief that crimes before the game would be relatively similar to the other game days.</p>
-                <p>All games occurred in Kansas City Missouri (labelled away) or in San Francisco (labelled home).</p>
                 <blockquote>
-                    <p>All over the city bonfires were being lit.. One was downtown on Market street. Another was on 19th and Mission. Another on 23rd and Mission. Still another was near the police station on 16th and Valencia which was the scene of raucous Occupy protest a few weeks ago.</p>
-                    <p>Eventually a bus was lit on fire around 3rd and Market in the heart of downtown.</p>
+                    <p>All over the city bonfires were being lit. One was downtown on Market street. Another was on 19th and Mission. Another on 23rd and Mission. Still another was near the police station on 16th and Valencia which was the scene of raucous Occupy protest a few weeks ago.</p>
                     <footer><a href='http://hiphopandpolitics.com/2012/10/29/when-do-we-call-a-celebration-a-riot-the-sf-giants-win-the-world-series/'><cite title="Hip Hop and Politics">Hip Hop and Politics</cite></a>
                     </footer>
                 </blockquote>
                 <blockquote>
                     <p>One person was shot in the arm near 21st and Valencia streets, and second person walked into San Francisco General Hospital with a gunshot wound that he said occurred near 16th and Bryant streets.</p>
+                    <p>An argument led to a stabbing near 21st and Valencia Streets, police said, with the victim suffering three wounds and being hospitalized in serious condition.</p>
+
                     <footer><a href='http://www.sfgate.com/crime/article/S-F-picks-up-the-pieces-after-raucous-Giants-5858132.php'><cite title="SFGate">SFGate</cite></a>
                     </footer>
                 </blockquote>
@@ -67,31 +67,90 @@
             </div>
             <div class='col-md-5'>
                 <h1>Visualizing Crime Types</h1>
-                <div><p>Our first explorating focused on what kinds of crimes seemed to occur during each game. There was a flurry of news reports about rioting in San Francisco and we wanted to better understand what kind of crime was associated with each game.</p>
-                  <p>The variety of crime types made it difficult to compare them together as arson occurred relatively rarely as opposed to something like burglary. Therefore we log normalized the data, taking the log of the total number of instances in order to bring them to the same scale. Highlight either a name or shape in order to make bold it in comparison to the other graphs.</p>
-                  <p>One of the immediate comparisons we can draw is that of Game 7, which clearly had high instances of nearly all selected crime types except for drug and narcotic offenses. It may be that police had to focus on larger public safety issues than pursue minor drug offenses.</p>
-                  <blockquote>
-                    <p>An argument led to a stabbing near 21st and Valencia Streets, police said, with the victim suffering three wounds and being hospitalized in serious condition.</p>
-                    <footer><a href='http://www.sfgate.com/crime/article/S-F-picks-up-the-pieces-after-raucous-Giants-5858132.php'><cite title="SFGate">SFGate</cite></a>
+                <div>
+                    <p>Our first explorating focused on what kinds of crimes seemed to occur during each game. There was a flurry of news reports about rioting in San Francisco and we wanted to better understand what kind of crime was associated with each game.</p>
+                    <p>The variety of crime types made it difficult to compare them together as arson occurred relatively rarely as opposed to something like burglary. Therefore we log normalized the data, taking the log of the total number of instances in order to bring them to the same scale. Highlight either a name or shape in order to make bold it in comparison to the other graphs.</p>
+                    <p>One of the immediate comparisons we can draw is that of Game 7, which clearly had high instances of nearly all selected crime types except for drug and narcotic offenses. It may be that police had to focus on larger public safety issues than pursue minor drug offenses. We can see significantly higher numbers of vandalism, assaults, and vehicle thefts.</p>
+                    <p>All games occurred in Kansas City Missouri (labelled away) or in San Francisco (labelled home).</p>
+                    <blockquote>
+                        <p>Eventually a bus was lit on fire around 3rd and Market in the heart of downtown.</p>
+                    <footer><i>Occurring on the night of Game 7, </i><a href='http://hiphopandpolitics.com/2012/10/29/when-do-we-call-a-celebration-a-riot-the-sf-giants-win-the-world-series/'><cite title="Hip Hop and Politics">Hip Hop and Politics</cite></a>
                     </footer>
-                </blockquote>
+                    </blockquote>
                 </div>
             </div>
         </div>
 
         <div id='thirdPage' class="row section">
-            <div class="col-md-6">
-                <h1>Number of Crimes By 2014 World Series Game</h1>
-                <div id="lead">
-                    <p>Insert narrative</p>
-                </div>
+            <div class="col-md-12">
                 <div id="main">
                     <div id="button-wrap">
                         <div id="count" class="button active">COUNT</div>
-                        <div id="game" class="button">GAME</div>
+                        <div id="game" class="button"> GAME</div>
                     </div>
-                    <div id="vis"></div>
+                    <div id="small-mult"></div>
                 </div>
+            </div>
+            <div class='col-md-6'>
+                <h1>Crimes per hour the day of the games</h1>
+                <p>After exploring the locations and crimes types, we wanted to better understand the development of crimes over the course of the days. We weren't sure if people were excited before, during or after the games. So we built a small multiples graph to help us explore the crimes per hour on the day of the games.</p>
+                <p>This graph allows for order both by game and by total crimes in that day. Hover over any point to see the time at the number of crimes per hour.</p>
+            </div>
+            <div class='col-md-6'>
+                <table class='table table-bordered'>
+                    <thead>
+                        <tr>
+                            <th>Game</th>
+                            <td>Date</td>
+                            <td>Start Time (Pacific Time)</td>
+                            <td>End Time (Pacific Time)</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Game 1 (SF Win) in KC</th>
+                            <td>Tue, Oct 21, 2014</td>
+                            <td>5:07 PM</td>
+                            <td>8:39 PM</td>
+                        </tr>
+                        <tr>
+                            <th>Game 2 (KC Win) in KC</th>
+                            <td>Wed, Oct 22, 2014</td>
+                            <td>5:07 PM</td>
+                            <td>8:32 PM</td>
+                        </tr>
+                        <tr>
+                            <th>Game 3 (KC Win) in SF</th>
+                            <td>Fri, Oct 24, 2014</td>
+                            <td>5:07 PM</td>
+                            <td>8:22 PM</td>
+                        </tr>
+                        <tr>
+                            <th>Game 4 (SF Win) in SF</th>
+                            <td>Sat, Oct 25, 2014</td>
+                            <td>5:07 PM</td>
+                            <td>9:07 PM</td>
+                        </tr>
+                        <tr>
+                            <th>Game 5 (SF Win) in SF</th>
+                            <td>Sun, Oct 26, 2014</td>
+                            <td>5:07 PM</td>
+                            <td>8:18 PM</td>
+                        </tr>
+                        <tr>
+                            <th>Game 6 (KC Win) in KC</th>
+                            <td>Tue, Oct 28, 2014</td>
+                            <td>5:07 PM</td>
+                            <td>8:28 PM</td>
+                        </tr>
+                        <tr>
+                            <th>Game 7 (SF Win) in KC</th>
+                            <td>Wed, Oct 29, 2014</td>
+                            <td>5:07 PM</td>
+                            <td>8:17 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 

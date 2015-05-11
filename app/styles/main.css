@@ -26,18 +26,26 @@
  #overviewmap {
      height:700px;
  }
+
+ /* Small Multiples */
+
+ #small-mult {
+     margin-left:auto;
+     margin-right:auto;
+     width:1435px;
+ }
  
- #lead {
+ #small-mult #lead {
      clear: both;
      width: 600px;
  }
- #lead p {
+ #small-mult #lead p {
      color: #444;
      font-family: Georgia, Palatino, serif;
      font-size: 1.0em;
      line-height: 1.4em;
  }
- .chart {
+ #small-mult .chart {
      float: left;
      padding-right: 5px;
      padding-bottom: 5px;
@@ -47,32 +55,33 @@
  svg {
      font-size: 10px;
  }
- .background {
+
+ #small-mult .background {
      fill: none;
  }
- .area {
+ #small-mult .area {
      fill: #cec6b9;
  }
- .line {
+ #small-mult .line {
      fill: none;
      stroke: #74736c;
      stroke-width: 1.4px;
  }
- .title {
+ #small-mult .title {
      font-size: 12px;
  }
- .axis line,
- .grid line {
+ #small-mult .axis line,
+ #small-mult .grid line {
      stroke-width: .5px;
      shape-rendering: crispEdges;
      stroke: #fff;
      opacity: 0.5;
      pointer-events: none;
  }
- .axis path {
+ #small-mult .axis path {
      display: none;
  }
- .hidden {
+ #small-mult .hidden {
      display: none;
      opacity: 0.0;
  }

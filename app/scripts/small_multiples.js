@@ -149,7 +149,7 @@
   };
 
   setupIsoytpe = function() {
-    $("#vis").isotope({
+    $("#small-mult").isotope({
       itemSelector: '.chart',
       layoutMode: 'fitRows',
       getSortData: {
@@ -168,7 +168,7 @@
         }
       }
     });
-    return $("#vis").isotope({
+    return $("#small-mult").isotope({
       sortBy: 'count'
     });
   };
@@ -182,7 +182,7 @@
         console.log(error);
       }
       data = transformData(rawData);
-      plotData("#vis", data, plot);
+      plotData("#small-mult", data, plot);
       return setupIsoytpe();
     };
     // queue().defer(d3.tsv, "data/askmefi_category_year.tsv").await(display);
@@ -192,7 +192,7 @@
       id = d3.select(this).attr("id");
       d3.select("#button-wrap").selectAll("div").classed("active", false);
       d3.select("#" + id).classed("active", true);
-      return $("#vis").isotope({
+      return $("#small-mult").isotope({
         sortBy: id
       });
     });
