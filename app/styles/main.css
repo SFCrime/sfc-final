@@ -43,7 +43,7 @@ blockquote {
      margin-right:auto;
      width:1435px;
  }
- 
+
  #small-mult #lead {
      clear: both;
      width: 600px;
@@ -120,6 +120,12 @@ blockquote {
 
  .dc-chart g.row text {
      fill:black;
-
  }
- 
+
+ div.dc-chart {
+    float: none;
+ }
+
+ #dc-data-count {
+    padding-bottom:10px;
+ }
