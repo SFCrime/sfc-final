@@ -8,6 +8,10 @@ div.row {
     color:black;
 }
 
+blockquote {
+    font-size:15px;
+}
+
 
 /* RADAR CHART                     */
  .radar-chart .area {

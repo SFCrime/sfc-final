@@ -42,19 +42,24 @@ $(document).ready(function() {
     });
 
     var mapbox_pk = "pk.eyJ1IjoiYmlsbGMiLCJhIjoiYllENmI2VSJ9.7 wxYGAIJoOtQ2WE3zoCJEA";
-    var map = L.map(mapDiv).setView([37.77, -122.44], 13);
+    var map = L.map(mapDiv, {zoomControl: false}).setView([37.77, -122.44], 13);
     L.tileLayer('http://{s}.tiles.mapbox.com/v3/billc.lj7dn4cg/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     }).addTo(map);
 
+    map.dragging.disable();
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    map.scrollWheelZoom.disable();
+    
     L.polygon(poly, {fillColor:"#F0AD4E", color:"#F0AD4E"}).addTo(map);
 
     L.marker(attpark, {icon:icn})
         .addTo(map)
-        .bindPopup("This is AT&T Park, the location of the home games.");
+        .bindPopup("AT&T Park, the Home of the Giants.");
     L.marker(mission19th, {icon:icn})
         .addTo(map)
-        .bindPopup("This is 19th and Mission, the Location of a bonfire.");
+        .bindPopup("This is 19th and Mission, the location of a bonfire.");
 
     L.marker(mission23rd, {icon:icn})
         .addTo(map)
@@ -62,19 +67,19 @@ $(document).ready(function() {
 
     L.marker(valencia16th, {icon:icn})
         .addTo(map)
-        .bindPopup("Site of the Police Station and a bonfire.");
+        .bindPopup("Site of police station and a bonfire.");
 
     L.marker(market3rd, {icon:icn})
         .addTo(map)
-        .bindPopup("Site where a bus was set on fire downtown.");
+        .bindPopup("Site where a bus was set on fire.");
 
     L.marker(valencia21st, {icon:icn})
         .addTo(map)
-        .bindPopup("Shooting and Stabbing Near here, 21st and Valencia.");
+        .bindPopup("Shooting and stabbing at 21st and Valencia.");
 
     L.marker(bryant16th, {icon:icn})
         .addTo(map)
-        .bindPopup("A victim reported being shot here, 16th and Bryant.");
+        .bindPopup("A victim reported being shot at 16th and Bryant.");
 
 
 });
