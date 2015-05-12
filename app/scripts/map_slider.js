@@ -72,7 +72,7 @@ $(document).ready(function() {
 
         var hourChart = dc.barChart("#crimesbyhour", groupname);
         var crimesbyhour = data.dimension(function(d) {
-            return d.hour;
+            return +d.hour;
         });
         var crimesbyhourGroup = crimesbyhour.group().reduceCount();
         hourChart
