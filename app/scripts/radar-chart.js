@@ -25,7 +25,7 @@ $(document)
                     var temp = d.className.split("a")[1].split("-");
                     var myDate = new Date(temp[0],temp[1]-1,temp[2]);
                     return {
-                        text: "World Series Game " + (i + 1) + ": " + weekday[myDate.getDay()] + ", Oct. " + myDate.getDate() + ", " + game_local[i],
+                        text: "Game " + (i + 1) + ": " + weekday[myDate.getDay()] + ", Oct. " + myDate.getDate() + ", " + game_local[i],
                         classed: d.className
                     }
                 });
@@ -37,14 +37,14 @@ $(document)
                     .data([1])
                     .enter()
                     .append('svg')
-                    .attr("width", 280)
+                    .attr("width", 260)
                     .attr("height", 160);
 
                 //Initiate Legend
                 var legend = svg.append("g")
                     .attr("class", "legend")
                     .attr("height", 160)
-                    .attr("width", 280)
+                    .attr("width", 260)
                     .attr('transform', 'translate(10,20)');
                 //Create colour squares
                 legend.selectAll('rect')
