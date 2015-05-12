@@ -33,12 +33,13 @@ $(document).ready(function() {
     poly = poly.map(function(d) {
         return [d[1], d[0]];
     });
-    var myIcon = L.Icon.Default.extend({
-        options: {
-            iconUrl: 'images/myMarker.png'
-        }
+    var icn = L.icon({
+        iconUrl: 'images/myMarker.png',
+        iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
     });
-    var icn = new myIcon();
 
     var mapbox_pk = "pk.eyJ1IjoiYmlsbGMiLCJhIjoiYllENmI2VSJ9.7 wxYGAIJoOtQ2WE3zoCJEA";
     var map = L.map(mapDiv).setView([37.77, -122.44], 13);

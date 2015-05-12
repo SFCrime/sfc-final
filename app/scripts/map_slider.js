@@ -7,12 +7,13 @@ $(document).ready(function() {
     var drawMarkerArea = function(csvfile) {
         var groupname = "crimes";
         var data = crossfilter(csvfile);
-        var myIcon = L.Icon.Default.extend({
-            options: {
-                iconUrl: 'images/myMarker.png'
-            }
+        var icn = L.icon({
+            iconUrl: 'images/myMarker.png',
+            iconSize: [25, 41],
+	    iconAnchor: [12, 41],
+	    popupAnchor: [1, -34],
+	    shadowSize: [41, 41]
         });
-        var icn = new myIcon();
         var mapChart = dc.leafletMarkerChart("#dcjs-map", groupname);
         var crime = data.dimension(function(d) {
             return d.lon + "," + d.lat;
