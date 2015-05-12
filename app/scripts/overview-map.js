@@ -50,11 +50,11 @@ $(document).ready(function() {
 
     L.marker(mission23rd)
         .addTo(map)
-        .bindPopup("This is 23rd and Mission, the site of another bonfire.");
+        .bindPopup("This is 23rd and Mission, the site of a bonfire.");
 
     L.marker(valencia16th)
         .addTo(map)
-        .bindPopup("Site of the Police Station and another bonfire.");
+        .bindPopup("Site of the Police Station and a bonfire.");
 
     L.marker(market3rd)
         .addTo(map)

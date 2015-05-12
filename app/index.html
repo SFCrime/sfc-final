@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="bower_components/fullpage.js/jquery.fullPage.css">
     <link rel="stylesheet" href="bower_components/radar-chart-d3/src/radar-chart.css">
     <link rel="stylesheet" href="bower_components/leaflet-draw/dist/leaflet.draw.css">
+    <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css">
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -85,8 +86,8 @@
             <div class="col-md-12">
                 <div id="main">
                     <div id="button-wrap">
-                        <div id="count" class="button">COUNT</div>
-                        <div id="game" class="button active"> GAME</div>
+                        <button id="count" class="btn btn-default btn-warning">Crime Count</button>
+                        <button id="game" class="btn btn-default">Game Number</button>
                     </div>
                     <div id="small-mult"></div>
                 </div>
@@ -107,43 +108,46 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class='warning'>
                             <th>Game 1 (SF Win) in KC</th>
                             <td>Tue, Oct 21, 2014</td>
                             <td>5:07 PM</td>
                             <td>8:39 PM</td>
                         </tr>
-                        <tr>
+                        <tr class='info'>
                             <th>Game 2 (KC Win) in KC</th>
                             <td>Wed, Oct 22, 2014</td>
                             <td>5:07 PM</td>
                             <td>8:32 PM</td>
                         </tr>
-                        <tr>
+                        <tr class='info'>
+
                             <th>Game 3 (KC Win) in SF</th>
                             <td>Fri, Oct 24, 2014</td>
                             <td>5:07 PM</td>
                             <td>8:22 PM</td>
-                        </tr>
-                        <tr>
+                        </tr class='info'>
+                        <tr class='warning'>
+
                             <th>Game 4 (SF Win) in SF</th>
                             <td>Sat, Oct 25, 2014</td>
                             <td>5:07 PM</td>
                             <td>9:07 PM</td>
                         </tr>
-                        <tr>
+                        <tr class='warning'>
+
                             <th>Game 5 (SF Win) in SF</th>
                             <td>Sun, Oct 26, 2014</td>
                             <td>5:07 PM</td>
                             <td>8:18 PM</td>
                         </tr>
-                        <tr>
+                        <tr class='info'>
                             <th>Game 6 (KC Win) in KC</th>
                             <td>Tue, Oct 28, 2014</td>
                             <td>5:07 PM</td>
                             <td>8:28 PM</td>
                         </tr>
-                        <tr>
+                        <tr class='warning'>
                             <th>Game 7 (SF Win) in KC</th>
                             <td>Wed, Oct 29, 2014</td>
                             <td>5:07 PM</td>
@@ -154,28 +158,40 @@
             </div>
         </div>
 
-        <div id='fourthPage' class="row section">
-            <div class="col-md-6">
-                <div id="groupedBar"></div>
-            </div>
-        </div>
+        <!-- <div id='fourthPage' class="row section"> -->
+        <!--     <div class="col-md-6"> -->
+        <!--         <div id="groupedBar"></div> -->
+        <!--     </div> -->
+        <!-- </div> -->
 
         <div id='fifthPage' class="row section">
-          <div class='col-md-6 pull-left'>
-            <h3>Interactive Exploration</h3>
-            <p>Click any graph to filter the points on the map and in the other graphs.</p>
-                <div id="crimesbyhour">
+            <div class='col-md-6 pull-left'>
+                <div class='pull-left'>
+                    <h3>Interactive Exploration</h3>
+                    <p>Click any graph to filter the points on the map and in the other graphs.</p>
+                    <h4>Filter By Hour in the Day</h4>
+                </div>
+                <!-- <div class='pull-right'> -->
+                <!--     <button class='btn btn-default' id='resetMapRender'>RESET</button> -->
+                <!-- </div> -->
+                <div>
+                    <div id="crimesbyhour">
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 pull-right">
+                <h4>Filter By Game Number</h4>
                 <div id="gamegraph">
                 </div>
+                <h4>Filter by Win or Loss</h4>
                 <div id="mywingraph">
                 </div>
+                <h4>Filter By Home or Away Game</h4>
                 <div id="myhomegraph">
                 </div>
             </div>
             <div class="col-md-3 pull-right">
+                <h4>Filter By Crime Type</h4>
                 <div id="category">
                 </div>
             </div>
@@ -195,13 +211,14 @@
     <script src="bower_components/dimple/dist/dimple.v2.1.2.min.js"></script>
     <script src="bower_components/fullpage.js/jquery.fullPage.js"></script>
     <script src="bower_components/radar-chart-d3/src/radar-chart.js"></script>
-    <script src="scripts/isotope.pkgd.min.js"></script>
-    <script src="scripts/queue.js"></script>
     <script src="bower_components/crossfilter/crossfilter.min.js"></script>
     <script src="bower_components/dcjs/web/js/dc.js"></script>
+    <script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/main.js -->
+    <script src="scripts/isotope.pkgd.min.js"></script>
+    <script src="scripts/queue.js"></script>
     <script src="scripts/dc.leaflet.js"></script>
     <script src="scripts/radar-chart.js"></script>
     <script type="text/javascript" src="scripts/small_multiples.js"></script>
