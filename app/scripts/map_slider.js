@@ -65,7 +65,7 @@ $(document).ready(function() {
             .height(300)
             .width(390)
             .elasticX(true)
-            .colors(["#EB9316"])
+            .colors(["#f0ad4e"])
             .xAxis().ticks(2).tickFormat(d3.format("s"));
 
 
@@ -81,10 +81,9 @@ $(document).ready(function() {
             .width(800)
             .transitionDuration(500)
             .elasticY(true)
-            .colors(["#EB9316"])
-            .x(d3.scale.linear().domain([0, 23]))
+            .colors(["#f0ad4e"])
+            .x(d3.scale.linear().domain([0, 24]))
             .yAxis().ticks(2).tickFormat(d3.format("s"));
-
 
 
 
