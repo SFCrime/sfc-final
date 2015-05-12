@@ -7,8 +7,12 @@ $(document).ready(function() {
     var drawMarkerArea = function(csvfile) {
         var groupname = "crimes";
         var data = crossfilter(csvfile);
-
-
+        var myIcon = L.Icon.Default.extend({
+            options: {
+                iconUrl: 'images/myMarker.png'
+            }
+        });
+        var icn = new myIcon();
         var mapChart = dc.leafletMarkerChart("#dcjs-map", groupname);
         var crime = data.dimension(function(d) {
             return d.lon + "," + d.lat;
@@ -18,6 +22,7 @@ $(document).ready(function() {
             .dimension(crime)
             .group(crimeGroup)
             .width(600)
+            .icon(function(d,map){return icn;})
             .renderPopup(false)
             .height(600)
             .zoom(12)
