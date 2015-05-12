@@ -10,9 +10,9 @@ $(document).ready(function() {
         var icn = L.icon({
             iconUrl: 'images/myMarker.png',
             iconSize: [25, 41],
-	    iconAnchor: [12, 41],
-	    popupAnchor: [1, -34],
-	    shadowSize: [41, 41]
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
         });
         var mapChart = dc.leafletMarkerChart("#dcjs-map", groupname);
         var crime = data.dimension(function(d) {
@@ -42,6 +42,7 @@ $(document).ready(function() {
             .height(700)
             .width(390)
             .elasticX(true)
+            .ordering(function (d) { return -d.value; })
             .colors(["#f0ad4e"])
             .xAxis().ticks(2).tickFormat(d3.format("s"));
 
@@ -54,7 +55,7 @@ $(document).ready(function() {
         gameChart
             .dimension(game)
             .group(gameGroup)
-            .height(200)
+            .height(300)
             .width(390)
             .elasticX(true)
             .colors(["#EB9316"])
@@ -89,6 +90,7 @@ $(document).ready(function() {
             .dimension(win)
             .group(winGroup)
             .width(390)
+            .height(125)
             .elasticX(true)
             .colors(["#f0ad4e"])
             .xAxis().ticks(2).tickFormat(d3.format("s"));
@@ -104,6 +106,7 @@ $(document).ready(function() {
             .dimension(home)
             .group(homeGroup)
             .width(390)
+            .height(125)
             .transitionDuration(500)
             .elasticX(true)
             .colors(["#f0ad4e"])
