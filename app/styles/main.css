@@ -1,9 +1,10 @@
 
- #firstPage {
-     /* background-image: url(/images/bg.jpg); */
-     /* background-repeat: no-repeat; */
-     /* background-size:cover; */
-}
+/*  #firstPage { */
+/*      background-image: url(/images/bg.jpg); */
+/*      background-repeat: no-repeat; */
+/*      background-size:cover; */
+/*      color:white; */
+/* } */
 div.row {
     color:black;
 }
@@ -12,6 +13,10 @@ blockquote {
     font-size:15px;
 }
 
+
+#firstPage  img{
+    width:100%;
+}
 
 /* RADAR CHART                     */
  .radar-chart .area {
