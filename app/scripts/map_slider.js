@@ -22,10 +22,10 @@ $(document).ready(function() {
         mapChart
             .dimension(crime)
             .group(crimeGroup)
-            .width(600)
             .icon(function(d,map){return icn;})
             .renderPopup(false)
-            .height(600)
+            .width(600)
+            .height(400)
             .zoom(12)
             .cluster(true)
             .center([37.77, -122.44]);
