@@ -108,11 +108,17 @@ blockquote {
  /* DCJS */
  #dc-mapped #dcjs-map {
      height:400px;
-     width:750px;
+     width:100%;
  }
+
  #dc-mapped .dc-chart g.row text {
      fill:black;
  }
+
+ #crimesbyhour {
+    width:400px;
+ }
+
  rect.extent{
      fill:black;
      opacity:0.4;

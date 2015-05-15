@@ -47,7 +47,7 @@ $(document).ready(function() {
             .dimension(category)
             .group(categoryGroup)
             .height(700)
-            .width(390)
+            .width(370)
             .elasticX(true)
             .ordering(function (d) { return -d.value; })
             .colors(["#f0ad4e"])
@@ -63,7 +63,7 @@ $(document).ready(function() {
             .dimension(game)
             .group(gameGroup)
             .height(300)
-            .width(390)
+            .width(370)
             .elasticX(true)
             .colors(["#f0ad4e"])
             .xAxis().ticks(2).tickFormat(d3.format("s"));
@@ -78,7 +78,7 @@ $(document).ready(function() {
         hourChart
             .dimension(crimesbyhour)
             .group(crimesbyhourGroup)
-            .width(800)
+            .width(725)
             .transitionDuration(500)
             .elasticY(true)
             .colors(["#f0ad4e"])
@@ -95,7 +95,7 @@ $(document).ready(function() {
         winChart
             .dimension(win)
             .group(winGroup)
-            .width(390)
+            .width(370)
             .height(125)
             .elasticX(true)
             .colors(["#f0ad4e"])
@@ -111,7 +111,7 @@ $(document).ready(function() {
         homeChart
             .dimension(home)
             .group(homeGroup)
-            .width(390)
+            .width(370)
             .height(125)
             .transitionDuration(500)
             .elasticX(true)
