@@ -115,10 +115,6 @@ blockquote {
      fill:black;
  }
 
- #crimesbyhour {
-    width:400px;
- }
-
  rect.extent{
      fill:black;
      opacity:0.4;
